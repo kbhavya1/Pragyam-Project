@@ -26,8 +26,11 @@ class StudentController extends Controller
 
         $users = User::where('accesslevel', 3)->get(['id', 'name']);
 
+        $carbon = new Carbon();
+        $initail = $carbon::now()->toDateString();
+        $final = $carbon::now()->addDays(7)->toDateString();
 
-        return view('list', ['options' => $options, 'a_id' => $users]);
+        return view('list', ['options' => $options, 'a_id' => $users,'initial'=>$initail,'final'=>$final]);
 
     }
 
@@ -81,6 +84,7 @@ class StudentController extends Controller
     }
 
     public function userData(){
+
 
     }
 

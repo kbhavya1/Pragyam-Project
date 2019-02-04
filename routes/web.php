@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/schedule','AlumniController@index');
 
 });
-
+Route::get('/test','StudentController@userData');
 
 
 

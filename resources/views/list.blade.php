@@ -4,7 +4,7 @@
 <form method="get" action="{{ asset('/data') }}">
     <span>
         Select Date:
-        <input type="date" name="getDate" min="2019-02-01" max="2019-02-10"
+        <input type="date" name="getDate" min="{{ $initial }}" max="{{ $final }}"
                value="{{Carbon\Carbon::now()->toDateString()}}">
 
         <select id="timeSel" name="getSlot">
